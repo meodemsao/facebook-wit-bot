@@ -1,8 +1,8 @@
 var Botkit = require('botkit');
 var Witbot = require('witbot');
 
-var facebookToken = process.env.FACEBOOK_TOKEN;
-var verifyToken = process.env.VERIFY_TOKEN;
+var facebookToken = process.env.FACEBOOK_VERIFY_TOKEN;
+var verifyToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
 var witbot = Witbot(process.env.WIT_TOKEN);
 var controller = Botkit.facebookbot({ 
   debug: false,
