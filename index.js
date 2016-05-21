@@ -3,7 +3,7 @@ var Witbot = require('witbot');
 
 var facebookToken = process.env.FACEBOOK_VERIFY_TOKEN;
 var verifyToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
-var witbot = Witbot(process.env.WIT_TOKEN);
+var witbot = Witbot("6AGYLXI4IGHNMMBPPOYDK4434RV62FQE");
 var controller = Botkit.facebookbot({ 
   debug: false,
   access_token: facebookToken,
