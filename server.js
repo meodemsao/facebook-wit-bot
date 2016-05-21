@@ -52,6 +52,7 @@ if (!process.env.FACEBOOK_PAGE_ACCESS_TOKEN) {
 
 var Botkit = require('botkit');
 var os = require('os');
+var witbot = Witbot(process.env.WIT_TOKEN);
 
 var controller = Botkit.facebookbot({
     debug: true,
