@@ -10,10 +10,14 @@ var controller = Botkit.facebookbot({
   verify_token: verifyToken
 });
 
-controller.spawn({}).startRTM(function (err, bot, payload) {
-  if (err) throw new Error('Error connecting to Facebook: ', err);
-  console.log('Connected to Facebook');
-})
+controller.spawn({});
+
+controller.setupWebserver(process.env.port || 3000, function(err, webserver) {
+    controller.createWebhookEndpoints(webserver, witbot, function() {
+        console.log('ONLINE!');
+    });
+});
+
 
 // wire up DMs and direct mentions to wit.ai
 controller.hears('.*', 'direct_message,direct_mention', function (bot, message) {
